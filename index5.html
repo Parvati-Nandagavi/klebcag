@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Interface </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="atm-container">
+        <h2>ATM Machine</h2>
+        <div id="pin-section">
+            <p>Enter PIN</p>
+            <input type="password" id="pin-display" placeholder="****" readonly>
+           <div class="keypad">
+           
+            <button onclick="addToPIN(1)">1</button>
+            <button onclick="addToPIN(2)">2</button>
+            <button onclick="addToPIN(3)">3</button><br>
+            <button onclick="addToPIN(4)">4</button>
+            <button onclick="addToPIN(5)">5</button>
+            <button onclick="addToPIN(6)">6</button><br>
+            <button onclick="addToPIN(7)">7</button>
+            <button onclick="addToPIN(8)">8</button>
+            <button onclick="addToPIN(9)">9</button><br>
+            <button onclick="addToPIN(0)">0</button>
+           <button class="enter-btn" onclick="validatePIN()">Enter</button>
+           <button class="cancle-btn" onclick="clearPIN()">Cancle</button>
+        </div>
+
+        <div id="atm-section" style="display: none;">
+            <div class="balance-container">
+                <p class="balance-display">Balance: ₹<span id="balance">XXXX</span></p>
+                <span class="eye-icon" onclick="toggleBalance()">👁️</span>
+            </div>
+            <input type="text" id="amount" placeholder="Enter amount">
+            <div class="keypad">
+                <button onclick="pressKey(1)">1</button>
+                <button onclick="pressKey(2)">2</button>
+                <button onclick="pressKey(3)">3</button><br>
+                <button onclick="pressKey(4)">4</button>
+                <button onclick="pressKey(5)">5</button>
+                <button onclick="pressKey(6)">6</button><br>
+                <button onclick="pressKey(7)">7</button>
+                <button onclick="pressKey(8)">8</button>
+                <button onclick="pressKey(9)">9</button><br>
+                <button onclick="pressKey(0)">0</button>
+                <button class="enter-btn" onclick="performTransaction()">Enter</button>
+                <button class="cancel-btn" onclick="clearInput()">Cancel</button>
+            </div>
+            <button onclick="deposit()">Deposit</button>
+            <button onclick="withdraw()">Withdraw</button>
+            <button onclick="showChangePIN()">Change PIN</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
